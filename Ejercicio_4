@@ -1,0 +1,55 @@
+CREATE DATABASE clientes;
+USE clientes;
+CREATE TABLE clientes(
+idclientes INT NOT NULL AUTO_INCREMENT, 
+nombre VARCHAR(45) NULL, 
+apellido VARCHAR(45) NULL, 
+codigoPostal INT, 
+direccion VARCHAR(45) NULL,
+telefonoFijo VARCHAR(45) NULL,
+telefnoCelular VARCHAR(45) NULL,
+correo VARCHAR(100) NULL, 
+PRIMARY KEY(idclientes)
+);
+
+
+CREATE TABLE proveedores(
+idproveedores INT NOT NULL AUTO_INCREMENT, 
+nroPuesto INT,
+nombre VARCHAR(45) NULL, 
+apellido VARCHAR(45) NULL,
+codigoPostal INT,
+direccion VARCHAR(45) NULL,
+telefonoFijo VARCHAR(45) NULL,
+telefonoCelular VARCHAR(45) NULL,
+correo VARCHAR(100) NULL,
+PRIMARY KEY(idproveedores)
+);
+
+CREATE TABLE productos(
+idproductos INT NOT NULL AUTO_INCREMENT,
+marca VARCHAR(45) NULL,
+talle VARCHAR(45) NULL,
+precio DOUBLE NULL, 
+stock INT,
+PRIMARY KEY(idproductos)
+);
+
+CREATE TABLE codigoPostales(
+idcodigoPostal INT NOT NULL AUTO_INCREMENT,
+codigopostal INT,
+lozalidad VARCHAR(45) NULL,
+PRIMARY KEY(idcodigoPostal)
+);
+
+CREATE TABLE ventas(
+idventas INT NOT NULL AUTO_INCREMENT,
+fecha DATETIME NULL,
+  idProducto INT NOT NULL, 
+     INDEX (idProducto), 
+     FOREIGN KEY (idproducto) REFERENCES productos(id),
+ dni VARCHAR(10) NULL,
+ monto DOUBLE NULL,
+ formaPago VARCHAR(45) NULL,
+ PRIMARY KEY(idventas)
+ );
