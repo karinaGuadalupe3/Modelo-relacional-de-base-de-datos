@@ -1,0 +1,56 @@
+CREATE DATABASE usuarios;
+USE usuarios;
+
+CREATE TABLE activations(
+idactivations INT NOT NULL AUTO_INCREMENT,
+codigo VARCHAR (100) NULL,
+email VARCHAR (100) NULL,
+nick VARCHAR(45) NULL,
+PRIMARY KEY(idactivations)
+);
+
+CREATE TABLE usuarios(
+idusuarios INT NOT NULL AUTO_INCREMENT, 
+nom_user VARCHAR(100) NULL,
+pass_user VARCHAR(45) NULL,
+level VARCHAR(45) NULL,
+nombre_user VARCHAR(100) NULL,
+apell_user VARCHAR(100) NULL,
+email_user VARCHAR(45) NULL,
+active VARCHAR(100) NULL, 
+PRIMARY KEY (idusuarios)
+);
+
+CREATE TABLE empresa(
+idempresa INT NOT NULL AUTO_INCREMENT,
+cod_empr VARCHAR(45) NULL,
+nom_empr VARCHAR(45) NULL,
+mision_empr VARCHAR(1000) NULL,
+vision_empr VARCHAR(1000) NULL,
+nit VARCHAR(150) NULL,
+rep_legal VARCHAR(150) NULL,
+cam_comer VARCHAR(150) NULL,
+telefono_1 VARCHAR(150) NULL,
+telefono_2 VARCHAR(150) NULL,
+direccion VARCHAR(150) NULL,
+email VARCHAR(150) NULL,
+website VARCHAR(150) NULL,
+PRIMARY KEY (idempresa)
+);
+
+CREATE TABLE objetivos(
+idobjetivos INT NOT NULL AUTO_INCREMENT,
+cod_empr VARCHAR(45) NULL,
+objen VARCHAR(500) NULL,
+obj1 VARCHAR(500) NULL,
+obj2 VARCHAR(500) NULL,
+obj3 VARCHAR(500) NULL,
+obj4 VARCHAR(500) NULL,
+PRIMARY KEY (idobjetivos)
+);
+
+CREATE TABLE asignador_codigo(
+idasignador_codigo INT NOT NULL AUTO_INCREMENT,
+codigo VARCHAR (45) NULL,
+PRIMARY KEY (idasignador_codigo)
+);
