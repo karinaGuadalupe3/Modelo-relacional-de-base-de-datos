@@ -1,0 +1,49 @@
+CREATE DATABASE student;
+
+USE student;
+
+CREATE TABLE seat(
+seat_number VARCHAR (45) NULL,
+seat_position VARCHAR (45) NULL,
+PRIMARY KEY(seat)
+);
+
+ CREATE TABLE student(
+ idstudent INT NOT NULL AUTO_INCREMENT,
+ student_name VARCHAR (45) NULL,
+ student_address VARCHAR (45) NULL,
+ PRIMARY KEY(student)
+ );
+ 
+ CREATE TABLE course(
+ course_name VARCHAR (45) NULL,
+ student_number VARCHAR (45) NULL,
+ PRIMARY KEY(course)
+ );
+ 
+ CREATE TABLE instructor(
+ instructor_number VARCHAR (45) NULL,
+ instructor_name VARCHAR (45) NULL,
+ instructor_faculty VARCHAR (45) NULL,
+  PRIMARY KEY(instructor)
+  );
+ 
+ CREATE TABLE class(
+ course_name VARCHAR (45) NULL,
+ section_number VARCHAR (45) NULL,
+ num_registered VARCHAR (45) NULL,
+ class_date_time VARCHAR (45) NULL,
+ PRIMARY KEY(class)
+ );
+ 
+ CREATE TABLE section(
+ section_number VARCHAR (45) NULL,
+  PRIMARY KEY(section)
+  );
+ 
+  CREATE TABLE professor(
+  idprofessor INT NOT NULL AUTO_INCREMENT,
+  professor_name VARCHAR (45) NULL,
+  professor_faculty VARCHAR (45) NULL,
+   PRIMARY KEY(professor)
+   );
