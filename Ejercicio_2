@@ -1,0 +1,37 @@
+CREATE TABLE cliente(
+    idCliente INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR (10) NULL,
+    apellido VARCHAR(15)NULL,
+    direccion VARCHAR(29) NULL,
+    fechaNacimiento VARCHAR(10)NOT NULL,
+    telefono INT NOT NULL,
+    email VARCHAR (30)NOT NULL
+);
+
+CREATE TABLE MODO(
+    num_pago INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(10)NULL,
+    PRIMARY KEY (num_pago)
+);
+
+
+CREATE TABLE FACTURA(
+    idFactura INT NOT NULL AUTO_INCREMENT,
+    idCliente INT NOT NULL,
+    INDEX(idCliente),
+    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente),
+    fecha VARCHAR(9)NOT NULL,
+    num_pago INT NOT NULL,
+    INDEX(num_pago),
+    FOREIGN KEY (num_pago) REFERENCES MODO(num_pago)
+);
+
+
+CREATE TABLE DETALLES(
+IDdetalle INT NOT NULL AUTO_INCREMENT,
+idFactura INT NOT NULL,
+INDEX(idFactura),
+FOREIGN KEY(idFactura) REFERENCES FACTURA(idFactura),
+cantidad INT (12)NOT NULL,
+precio INT (2)NOT NULL
+);
