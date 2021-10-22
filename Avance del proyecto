@@ -1,0 +1,32 @@
+CREATE DATABASE inventario;
+USE inventario;
+
+CREATE TABLE cajeros(
+idcajeros INT NOT NULL AUTO_INCREMENT,
+nombre varchar(45) null,
+direccion varchar(45) null,
+telefono varchar(45) null,
+correo varchar(100) null,
+primary key(idcajeros)
+);
+
+create table proveedores(
+idproveedores int null auto_increment,
+nombre varchar(45) null,
+direccion varchar(45) null,
+telefono varchar(45) null,
+primary key(idproveedores)
+);
+
+create table inventario(
+idinventario int not null auto_increment,
+nombreDelproducto varchar(45) null,
+fechadeMovimiento date null,
+cantidaddeEntrada varchar(45) null,
+cantidaddeSalida varchar(45) null,
+preciodeCompra varchar(45) null,
+preciodeVenta varchar(45) null,
+total varchar(45) null,
+primary key(idinventario)
+);
+
